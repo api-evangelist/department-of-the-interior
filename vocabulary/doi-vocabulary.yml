@@ -1,0 +1,58 @@
+name: Department of the Interior Vocabulary
+description: >-
+  Controlled vocabulary covering domain concepts published by Interior bureaus
+  - National Park Service (parks, alerts, campgrounds), USGS (earthquakes,
+  water, hydrology, geology), Bureau of Land Management (public lands), Fish
+  and Wildlife Service (species, refuges), Bureau of Reclamation (dams), and
+  the National Cemetery and natural-resource revenue offices.
+namespace: https://api-evangelist.com/department-of-the-interior/vocab/
+prefix: doi
+terms:
+  - term: Park
+    type: Class
+    definition: A unit administered by the National Park Service (national park, monument, recreation area, historic site, etc.).
+  - term: ParkCode
+    type: Property
+    definition: Four-letter identifier assigned by NPS to each park unit.
+  - term: Campground
+    type: Class
+    definition: A campground located within an NPS unit.
+  - term: VisitorCenter
+    type: Class
+    definition: A staffed visitor center operated by NPS.
+  - term: ParkAlert
+    type: Class
+    definition: An NPS-issued alert (closure, caution, danger, information).
+  - term: Earthquake
+    type: Class
+    definition: A seismic event recorded in the USGS earthquake catalog (FDSN event service).
+  - term: Magnitude
+    type: Property
+    definition: Logarithmic measure of earthquake size (Mw, Mb, Md, etc.).
+  - term: AlertLevel
+    type: Property
+    definition: PAGER alert level (green, yellow, orange, red).
+  - term: TsunamiFlag
+    type: Property
+    definition: Boolean indicating whether a tsunami may be associated with the event.
+  - term: WaterSite
+    type: Class
+    definition: A USGS surface-water, groundwater, or water-quality monitoring site.
+  - term: Streamflow
+    type: Property
+    definition: Volumetric streamflow in cubic feet per second (parameter code 00060).
+  - term: PublicLand
+    type: Class
+    definition: Federal land administered by the Bureau of Land Management.
+  - term: WildlifeRefuge
+    type: Class
+    definition: A unit of the National Wildlife Refuge System administered by USFWS.
+  - term: Species
+    type: Class
+    definition: A taxon tracked by USFWS (including listed threatened or endangered species).
+  - term: Dam
+    type: Class
+    definition: A dam in the National Inventory of Dams or operated by the Bureau of Reclamation.
+  - term: NaturalResourceRevenue
+    type: Class
+    definition: Royalty, rent, or bonus revenue collected by the Office of Natural Resources Revenue.

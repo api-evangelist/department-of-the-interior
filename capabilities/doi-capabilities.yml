@@ -1,0 +1,38 @@
+name: Department of the Interior API Capabilities
+description: >-
+  High-level capabilities published by Interior bureaus - NPS, USGS, BLM,
+  USFWS, BOR, BIA, and ONRR.
+capabilities:
+  - id: park-information
+    name: National Park Information
+    description: Search and retrieve parks, alerts, campgrounds, visitor centers, events, and articles for U.S. National Park Service units.
+    apis:
+      - nps-data-api
+    auth: API key (api.nps.gov)
+  - id: earthquake-monitoring
+    name: Earthquake Catalog Queries
+    description: Query the USGS earthquake catalog by time, magnitude, location, depth, and intensity.
+    apis:
+      - usgs-earthquake-api
+    auth: None (public)
+  - id: water-monitoring
+    name: Water Resources Monitoring
+    description: Read real-time streamflow, groundwater levels, and water-quality measurements from USGS NWIS.
+    apis:
+      - usgs-water-services-api
+    auth: None (public)
+  - id: public-lands
+    name: Public Land Management Data
+    description: Retrieve BLM public-land records, leases, mining claims, and recreation areas.
+    apis: []
+    auth: None (public)
+  - id: wildlife-refuges
+    name: Wildlife Refuges and Listed Species
+    description: USFWS data on the National Wildlife Refuge System and Endangered Species Act listings.
+    apis: []
+    auth: None (public)
+  - id: natural-resource-revenue
+    name: Natural Resource Revenue
+    description: ONRR data on royalty, rent, and bonus revenue from federal energy and mineral production.
+    apis: []
+    auth: None (public)

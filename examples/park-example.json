@@ -1,0 +1,29 @@
+{
+  "total": "1",
+  "limit": "1",
+  "start": "0",
+  "data": [
+    {
+      "id": "AAB59FFB-CFFB-4FFA-8FFD-7E68A1FA73AB",
+      "url": "https://www.nps.gov/yose/index.htm",
+      "fullName": "Yosemite National Park",
+      "parkCode": "yose",
+      "description": "Not just a great valley, but a shrine to human foresight, the strength of granite, the power of glaciers, the persistence of life, and the tranquility of the High Sierra.",
+      "latitude": "37.84883288",
+      "longitude": "-119.5571873",
+      "latLong": "lat:37.84883288, long:-119.5571873",
+      "states": "CA",
+      "designation": "National Park",
+      "directionsInfo": "Yosemite is open year-round. Information on conditions and detours is available on the park website.",
+      "weatherInfo": "Yosemite weather varies by elevation; check current conditions before visiting.",
+      "activities": [
+        { "id": "09DF0950-D319-4557-A57E-04CD2F63FF42", "name": "Arts and Culture" },
+        { "id": "A59947B7-3376-49B4-AD02-C0423E08C5F7", "name": "Camping" },
+        { "id": "13A57211-CB12-4B36-9C46-DA9D5575CF8E", "name": "Hiking" }
+      ],
+      "topics": [
+        { "id": "D69EE07A-CCBF-4DA2-998E-DAEEB7C07A4D", "name": "Forests and Woodlands" }
+      ]
+    }
+  ]
+}

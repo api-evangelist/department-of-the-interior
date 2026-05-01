@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1745803200000,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-04-27&minmagnitude=5.0",
+    "title": "USGS Earthquakes - Magnitude 5.0+",
+    "api": "1.14.1",
+    "count": 1,
+    "status": 200
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "us6000example",
+      "properties": {
+        "mag": 5.4,
+        "place": "112 km SW of Example Island, Country X",
+        "time": 1745796543000,
+        "updated": 1745800000000,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000example",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000example&format=geojson",
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 449,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 5.4 - 112 km SW of Example Island"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [142.123, -10.456, 35.0]
+      }
+    }
+  ],
+  "bbox": [142.123, -10.456, 35.0, 142.123, -10.456, 35.0]
+}

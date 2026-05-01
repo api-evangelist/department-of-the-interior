@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/department-of-the-interior/schemas/park.json",
+  "title": "National Park",
+  "description": "An NPS-managed unit (national park, monument, recreation area, historic site, etc.).",
+  "type": "object",
+  "required": ["id", "parkCode", "fullName"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "url": { "type": "string", "format": "uri" },
+    "fullName": { "type": "string" },
+    "parkCode": { "type": "string", "minLength": 4, "maxLength": 4, "description": "Four-letter NPS park code" },
+    "description": { "type": "string" },
+    "latitude": { "type": "string" },
+    "longitude": { "type": "string" },
+    "states": { "type": "string", "description": "Comma-separated two-letter state codes" },
+    "designation": { "type": "string", "description": "e.g. National Park, National Monument, National Historical Park" },
+    "directionsInfo": { "type": "string" },
+    "weatherInfo": { "type": "string" },
+    "operatingHours": { "type": "array", "items": { "type": "object" } },
+    "entranceFees": { "type": "array", "items": { "type": "object" } },
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": { "id": { "type": "string" }, "name": { "type": "string" } }
+      }
+    },
+    "topics": { "type": "array", "items": { "type": "object" } },
+    "images": { "type": "array", "items": { "type": "object" } }
+  }
+}

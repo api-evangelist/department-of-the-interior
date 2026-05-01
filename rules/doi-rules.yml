@@ -1,0 +1,28 @@
+name: Department of the Interior API Rules
+description: >-
+  Rules and constraints governing access to Interior bureau APIs.
+rules:
+  - id: nps-api-key-required
+    description: NPS Data API requires an api_key query parameter or X-Api-Key header issued via api.nps.gov.
+    appliesTo: ["nps-data-api"]
+    severity: must
+  - id: nps-pagination
+    description: NPS Data API responses default to 50 records and a maximum page size of 50; consumers must page using start and limit.
+    appliesTo: ["nps-data-api"]
+    severity: must
+  - id: usgs-fdsn-limits
+    description: USGS FDSN event queries enforce a 20,000-event maximum per query; large historical pulls must be chunked by time.
+    appliesTo: ["usgs-earthquake-api"]
+    severity: must
+  - id: usgs-water-rate-limits
+    description: USGS Water Services consumers must respect documented rate limits and prefer the period parameter for recent queries.
+    appliesTo: ["usgs-water-services-api"]
+    severity: should
+  - id: public-domain-attribution
+    description: Interior data is U.S. government work in the public domain; attribute the originating bureau when republishing.
+    appliesTo: ["*"]
+    severity: should
+  - id: image-rights
+    description: NPS image properties may carry separate copyright and credit; consumers must surface the credit and altText fields when displaying images.
+    appliesTo: ["nps-data-api"]
+    severity: must

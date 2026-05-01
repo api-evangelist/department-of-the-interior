@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/department-of-the-interior/schemas/earthquake-feature.json",
+  "title": "USGS Earthquake Feature",
+  "description": "A single earthquake event represented as a GeoJSON Feature in the USGS earthquake catalog.",
+  "type": "object",
+  "required": ["type", "id", "properties", "geometry"],
+  "properties": {
+    "type": { "type": "string", "const": "Feature" },
+    "id": { "type": "string" },
+    "properties": {
+      "type": "object",
+      "required": ["mag", "place", "time"],
+      "properties": {
+        "mag": { "type": "number", "description": "Magnitude" },
+        "place": { "type": "string" },
+        "time": { "type": "integer", "description": "Origin time (Unix ms)" },
+        "updated": { "type": "integer" },
+        "tz": { "type": ["integer", "null"] },
+        "url": { "type": "string", "format": "uri" },
+        "detail": { "type": "string", "format": "uri" },
+        "felt": { "type": ["integer", "null"] },
+        "cdi": { "type": ["number", "null"] },
+        "mmi": { "type": ["number", "null"] },
+        "alert": { "type": ["string", "null"], "enum": ["green", "yellow", "orange", "red", null] },
+        "status": { "type": "string", "enum": ["automatic", "reviewed", "deleted"] },
+        "tsunami": { "type": "integer", "enum": [0, 1] },
+        "sig": { "type": "integer" },
+        "magType": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "const": "Point" },
+        "coordinates": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3,
+          "description": "[longitude, latitude, depth_km]"
+        }
+      }
+    }
+  }
+}
