@@ -8,32 +8,40 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Department of the Interior
 providerId: department-of-the-interior
-publisherName: Department of the Interior
-serviceCategory: API
+publisherName: U.S. Department of the Interior
+serviceCategory: Federal Government / Public Open Data
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Federal Government
   - Public Lands
-  - Natural Resources
+  - Open Data
   - Geospatial
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Department of the Interior API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps for Department of the Interior public APIs: zero-cost public data services,
+  funded through congressional appropriations rather than per-call billing. FinOps practice for consumers
+  centers on operational cost (egress, caching, downstream storage) rather than provider invoice cost.'
+sources:
+  - https://www.doi.gov/developer
+  - https://api.data.gov/
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Track DOI / USGS / NPS API consumption locally (consumer-side observability) since DOI
+      issues no usage statements. For api.data.gov-keyed APIs (NPS), monitor X-RateLimit-Remaining headers
+      and the api.data.gov developer-account dashboard.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate cost on the consumer side - egress fees, downstream storage, and compute spent
+      processing federal open data - to the consuming workload. There are no provider charges to allocate.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Cache federal open data aggressively (datasets are stable or updated on documented cadence),
+      use bulk dumps and FDSN event windows over polling, identify your client in User-Agent, and throttle
+      to stay well within api.data.gov hourly limits.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Each consuming team owns its own consumer-side cost; data stewards within the consuming
+      organization should track which DOI datasets are in use and whether any compliance, attribution,
+      or update-cadence obligations apply.
 domains:
   - name: Understand Usage and Cost
     capabilities:
@@ -45,71 +53,51 @@ domains:
     capabilities:
       - Planning and Estimating
       - Forecasting
-      - Budgeting
       - Benchmarking
       - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
+      - Rate Optimization
+      - Architecting for Cloud
   - name: Manage the FinOps Practice
     capabilities:
-      - FinOps Practice Operations
       - FinOps Education and Enablement
-      - Invoicing and Chargeback
       - Onboarding Workloads
-      - Intersecting Disciplines
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Free / Public Data
+  billingFrequency: N/A
   billingCurrency: USD
   chargeCategories:
     - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
+  chargeFrequency: N/A
 focusColumns:
-  ServiceName: Department of the Interior
-  ServiceCategory: Developer Tools / API
-  ProviderName: Department of the Interior
-  PublisherName: Department of the Interior
-  InvoiceIssuerName: Department of the Interior
-  PricingCategory: Usage-Based
+  ServiceName: DOI Public APIs
+  ServiceCategory: Federal Government / Public Open Data
+  ProviderName: U.S. Department of the Interior
+  PublisherName: U.S. Department of the Interior
+  InvoiceIssuerName: N/A (no invoice issued)
+  PricingCategory: Free
   PricingUnit: request
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
   - name: api_requests
-    description: Count of billable API requests
+    description: Public API requests (consumer-side count)
     unit: request
     aggregation: sum
     dimensions:
       - api
       - endpoint
-      - tier
-      - region
+      - bureau
       - consumer
   - name: data_egress
-    description: Bytes returned over the network in API responses
+    description: Bytes downloaded from DOI / USGS / NPS endpoints (consumer-side metric)
     unit: GB
     aggregation: sum
     dimensions:
       - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
+      - bureau
 apis:
   - name: National Park Service Data API
     baseURL: https://developer.nps.gov/api/v1
@@ -135,20 +123,20 @@ apis:
     serviceName: USGS Water Services API
     serviceCategory: API
   - name: DOI Open Data Catalog
-    baseURL: ''
+    baseURL: https://www.doi.gov/developer
     tags:
       - Open Data
     serviceName: DOI Open Data Catalog
     serviceCategory: API
   - name: BLM Public Lands Data
-    baseURL: ''
+    baseURL: https://www.blm.gov/
     tags:
       - BLM
       - Public Lands
     serviceName: BLM Public Lands Data
     serviceCategory: API
   - name: USFWS Environmental Conservation Online System (ECOS) API
-    baseURL: ''
+    baseURL: https://ecos.fws.gov/
     tags:
       - USFWS
       - Wildlife
@@ -156,7 +144,7 @@ apis:
     serviceName: USFWS Environmental Conservation Online System (ECOS) API
     serviceCategory: API
   - name: Bureau of Reclamation Water Data
-    baseURL: ''
+    baseURL: https://www.usbr.gov/
     tags:
       - Reclamation
       - Water
@@ -164,19 +152,19 @@ apis:
     serviceName: Bureau of Reclamation Water Data
     serviceCategory: API
   - name: ONRR Natural Resources Revenue Data
-    baseURL: ''
+    baseURL: https://revenuedata.doi.gov/
     tags:
       - ONRR
       - Revenue
     serviceName: ONRR Natural Resources Revenue Data
     serviceCategory: API
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Consumer Cost per 1K Requests
+    metric: consumer_side_cost / (api_requests / 1000)
+    target: trend down via caching
+  - name: Cache-Hit Ratio
+    metric: cache_hits / (cache_hits + origin_requests)
+    target: '> 0.8 for stable datasets'
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

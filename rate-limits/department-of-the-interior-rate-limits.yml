@@ -4,100 +4,55 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Department of the Interior
 providerId: department-of-the-interior
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Federal Government
   - Public Lands
-  - Natural Resources
   - Geospatial
+  - Open Data
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Department of the Interior API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
+description: DOI APIs split into two rate-limit regimes. APIs gated by an api.data.gov developer key (notably
+  the NPS Data API) inherit api.data.gov's standard default of 1,000 requests per hour per API key, raisable
+  via support. USGS, Reclamation, BLM, USFWS, and ONRR public endpoints are unauthenticated and bounded
+  by fair-use rather than per-key quotas. Rate signaling on api.data.gov-fronted services uses X-RateLimit-*
+  headers and HTTP 429 / 503 on throttle.
+sources:
+  - https://api.data.gov/docs/
+  - https://www.nps.gov/subjects/developer/get-started.htm
+  - https://earthquake.usgs.gov/fdsnws/event/1/
 headers:
   limit: X-RateLimit-Limit
   remaining: X-RateLimit-Remaining
   reset: X-RateLimit-Reset
   retryAfter: Retry-After
-  policy: RateLimit-Policy
 responseCodes:
   throttled: 429
   quotaExceeded: 429
   serviceUnavailable: 503
+  forbidden: 403
 limits:
-  - tier: free
-    name: Free Tier Default
+  - tier: api-data-gov
+    name: api.data.gov default per-key limit
     scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - National Park Service Data API
-      - USGS Earthquake Hazards Program API
-      - USGS Water Services API
-      - DOI Open Data Catalog
-      - BLM Public Lands Data
-      - USFWS Environmental Conservation Online System (ECOS) API
-      - Bureau of Reclamation Water Data
-      - ONRR Natural Resources Revenue Data
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
+    metric: requests_per_hour
     limit: 1000
-    timeFrame: month
+    timeFrame: hour
     applies:
       - National Park Service Data API
-      - USGS Earthquake Hazards Program API
-      - USGS Water Services API
-      - DOI Open Data Catalog
-      - BLM Public Lands Data
-      - USFWS Environmental Conservation Online System (ECOS) API
-      - Bureau of Reclamation Water Data
-      - ONRR Natural Resources Revenue Data
-  - tier: professional
-    name: Professional Tier Default
+  - tier: api-data-gov
+    name: api.data.gov increased limit (raise via support)
     scope: api-key
+    metric: requests_per_hour
+    limit: 'higher; request via api.data.gov support'
+    applies:
+      - National Park Service Data API
+  - tier: open
+    name: Open / fair-use throttle
+    scope: IP
     metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
+    limit: 'fair-use; not published'
     applies:
-      - National Park Service Data API
-      - USGS Earthquake Hazards Program API
-      - USGS Water Services API
-      - DOI Open Data Catalog
-      - BLM Public Lands Data
-      - USFWS Environmental Conservation Online System (ECOS) API
-      - Bureau of Reclamation Water Data
-      - ONRR Natural Resources Revenue Data
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - National Park Service Data API
-      - USGS Earthquake Hazards Program API
-      - USGS Water Services API
-      - DOI Open Data Catalog
-      - BLM Public Lands Data
-      - USFWS Environmental Conservation Online System (ECOS) API
-      - Bureau of Reclamation Water Data
-      - ONRR Natural Resources Revenue Data
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - National Park Service Data API
       - USGS Earthquake Hazards Program API
       - USGS Water Services API
       - DOI Open Data Catalog
@@ -106,18 +61,19 @@ limits:
       - Bureau of Reclamation Water Data
       - ONRR Natural Resources Revenue Data
 policies:
+  - name: api.data.gov Key Pattern
+    description: NPS-style endpoints enforce limits at the api.data.gov gateway. Excess returns 429 with
+      a JSON error and an OVER_RATE_LIMIT code. Increases must be requested in writing via the api.data.gov
+      contact form.
+  - name: USGS Fair Use
+    description: USGS earthquake and water services request that bulk consumers cache responses, throttle
+      polling intervals (e.g. earthquake events polled at most every minute), and identify themselves
+      with a contact email in the User-Agent string. There is no per-key rate limit.
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: On 429 / 503 implement exponential backoff with jitter, honor Retry-After when present.
+  - name: Caching Encouragement
+    description: All DOI / USGS bureaus encourage caching of responses (especially geospatial and water-data
+      bulk pulls) to reduce load on shared scientific infrastructure.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
