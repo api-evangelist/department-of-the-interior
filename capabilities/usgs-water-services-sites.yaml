@@ -1,0 +1,95 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: USGS Water Services API — Sites
+  description: 'USGS Water Services API — Sites. 1 operations. Lead operation: Look up monitoring sites. Self-contained Naftiko
+    capability covering one Department Of The Interior business surface.'
+  tags:
+  - Department Of The Interior
+  - Sites
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DEPARTMENT_OF_THE_INTERIOR_API_KEY: DEPARTMENT_OF_THE_INTERIOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: usgs-water-services-sites
+    baseUri: https://waterservices.usgs.gov/nwis
+    description: USGS Water Services API — Sites business capability. Self-contained, no shared references.
+    resources:
+    - name: site
+      path: /site/
+      operations:
+      - name: getsites
+        method: GET
+        description: Look up monitoring sites
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: stateCd
+          in: query
+          type: string
+        - name: huc
+          in: query
+          type: string
+        - name: bBox
+          in: query
+          type: string
+        - name: countyCd
+          in: query
+          type: string
+        - name: siteType
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: usgs-water-services-sites-rest
+    port: 8080
+    description: REST adapter for USGS Water Services API — Sites. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/site
+      name: site
+      description: REST surface for site.
+      operations:
+      - method: GET
+        name: getsites
+        description: Look up monitoring sites
+        call: usgs-water-services-sites.getsites
+        with:
+          stateCd: rest.stateCd
+          huc: rest.huc
+          bBox: rest.bBox
+          countyCd: rest.countyCd
+          siteType: rest.siteType
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: usgs-water-services-sites-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for USGS Water Services API — Sites. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: look-up-monitoring-sites
+      description: Look up monitoring sites
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: usgs-water-services-sites.getsites
+      with:
+        stateCd: tools.stateCd
+        huc: tools.huc
+        bBox: tools.bBox
+        countyCd: tools.countyCd
+        siteType: tools.siteType
+      outputParameters:
+      - type: object
+        mapping: $.

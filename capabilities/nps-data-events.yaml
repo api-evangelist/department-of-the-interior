@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: National Park Service (NPS) Data API — Events
+  description: 'National Park Service (NPS) Data API — Events. 1 operations. Lead operation: List park events. Self-contained
+    Naftiko capability covering one Department Of The Interior business surface.'
+  tags:
+  - Department Of The Interior
+  - Events
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DEPARTMENT_OF_THE_INTERIOR_API_KEY: DEPARTMENT_OF_THE_INTERIOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: nps-data-events
+    baseUri: https://developer.nps.gov/api/v1
+    description: National Park Service (NPS) Data API — Events business capability. Self-contained, no shared references.
+    resources:
+    - name: events
+      path: /events
+      operations:
+      - name: listevents
+        method: GET
+        description: List park events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dateStart
+          in: query
+          type: string
+        - name: dateEnd
+          in: query
+          type: string
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.DEPARTMENT_OF_THE_INTERIOR_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: nps-data-events-rest
+    port: 8080
+    description: REST adapter for National Park Service (NPS) Data API — Events. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/events
+      name: events
+      description: REST surface for events.
+      operations:
+      - method: GET
+        name: listevents
+        description: List park events
+        call: nps-data-events.listevents
+        with:
+          dateStart: rest.dateStart
+          dateEnd: rest.dateEnd
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: nps-data-events-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for National Park Service (NPS) Data API — Events. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-park-events
+      description: List park events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nps-data-events.listevents
+      with:
+        dateStart: tools.dateStart
+        dateEnd: tools.dateEnd
+      outputParameters:
+      - type: object
+        mapping: $.

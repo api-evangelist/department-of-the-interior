@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: USGS Water Services API — InstantaneousValues
+  description: 'USGS Water Services API — InstantaneousValues. 1 operations. Lead operation: Real-time instantaneous values.
+    Self-contained Naftiko capability covering one Department Of The Interior business surface.'
+  tags:
+  - Department Of The Interior
+  - InstantaneousValues
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DEPARTMENT_OF_THE_INTERIOR_API_KEY: DEPARTMENT_OF_THE_INTERIOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: usgs-water-services-instantaneousvalues
+    baseUri: https://waterservices.usgs.gov/nwis
+    description: USGS Water Services API — InstantaneousValues business capability. Self-contained, no shared references.
+    resources:
+    - name: iv
+      path: /iv/
+      operations:
+      - name: getinstantaneousvalues
+        method: GET
+        description: Real-time instantaneous values
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sites
+          in: query
+          type: string
+          required: true
+        - name: parameterCd
+          in: query
+          type: string
+        - name: period
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: usgs-water-services-instantaneousvalues-rest
+    port: 8080
+    description: REST adapter for USGS Water Services API — InstantaneousValues. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/iv
+      name: iv
+      description: REST surface for iv.
+      operations:
+      - method: GET
+        name: getinstantaneousvalues
+        description: Real-time instantaneous values
+        call: usgs-water-services-instantaneousvalues.getinstantaneousvalues
+        with:
+          sites: rest.sites
+          parameterCd: rest.parameterCd
+          period: rest.period
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: usgs-water-services-instantaneousvalues-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for USGS Water Services API — InstantaneousValues. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: real-time-instantaneous-values
+      description: Real-time instantaneous values
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: usgs-water-services-instantaneousvalues.getinstantaneousvalues
+      with:
+        sites: tools.sites
+        parameterCd: tools.parameterCd
+        period: tools.period
+      outputParameters:
+      - type: object
+        mapping: $.

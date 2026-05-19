@@ -1,0 +1,91 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: USGS Water Services API — DailyValues
+  description: 'USGS Water Services API — DailyValues. 1 operations. Lead operation: Daily statistical values. Self-contained
+    Naftiko capability covering one Department Of The Interior business surface.'
+  tags:
+  - Department Of The Interior
+  - DailyValues
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DEPARTMENT_OF_THE_INTERIOR_API_KEY: DEPARTMENT_OF_THE_INTERIOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: usgs-water-services-dailyvalues
+    baseUri: https://waterservices.usgs.gov/nwis
+    description: USGS Water Services API — DailyValues business capability. Self-contained, no shared references.
+    resources:
+    - name: dv
+      path: /dv/
+      operations:
+      - name: getdailyvalues
+        method: GET
+        description: Daily statistical values
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sites
+          in: query
+          type: string
+          required: true
+        - name: parameterCd
+          in: query
+          type: string
+        - name: startDT
+          in: query
+          type: string
+        - name: endDT
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: usgs-water-services-dailyvalues-rest
+    port: 8080
+    description: REST adapter for USGS Water Services API — DailyValues. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/dv
+      name: dv
+      description: REST surface for dv.
+      operations:
+      - method: GET
+        name: getdailyvalues
+        description: Daily statistical values
+        call: usgs-water-services-dailyvalues.getdailyvalues
+        with:
+          sites: rest.sites
+          parameterCd: rest.parameterCd
+          startDT: rest.startDT
+          endDT: rest.endDT
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: usgs-water-services-dailyvalues-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for USGS Water Services API — DailyValues. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: daily-statistical-values
+      description: Daily statistical values
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: usgs-water-services-dailyvalues.getdailyvalues
+      with:
+        sites: tools.sites
+        parameterCd: tools.parameterCd
+        startDT: tools.startDT
+        endDT: tools.endDT
+      outputParameters:
+      - type: object
+        mapping: $.
