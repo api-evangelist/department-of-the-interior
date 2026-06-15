@@ -1,0 +1,723 @@
+{
+  "item": [
+    {
+      "id": "c759fb76-cdbe-4b3f-83b0-622d5846d558",
+      "name": "Parks",
+      "description": {
+        "content": "National parks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b5d186e-dafb-4c36-ab5e-990e3a49f258",
+          "name": "List or search national parks",
+          "request": {
+            "name": "List or search national parks",
+            "description": {},
+            "url": {
+              "path": [
+                "parks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text search"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "acc273ea-9aa2-4b3b-8173-4d1e85885033",
+              "name": "Parks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"fullName\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"latLong\": \"string\",\n      \"states\": \"string\",\n      \"designation\": \"string\",\n      \"directionsInfo\": \"string\",\n      \"directionsUrl\": \"string\",\n      \"weatherInfo\": \"string\",\n      \"contacts\": {},\n      \"activities\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"fullName\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"latLong\": \"string\",\n      \"states\": \"string\",\n      \"designation\": \"string\",\n      \"directionsInfo\": \"string\",\n      \"directionsUrl\": \"string\",\n      \"weatherInfo\": \"string\",\n      \"contacts\": {},\n      \"activities\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "780caedb-c725-4c43-83fe-9806537d4c99",
+      "name": "Alerts",
+      "description": {
+        "content": "Park alerts and emergencies",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1418dcb0-0909-4812-a603-b49ca4d83fce",
+          "name": "List park alerts",
+          "request": {
+            "name": "List park alerts",
+            "description": {},
+            "url": {
+              "path": [
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text search"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41ee111f-d977-4b57-8bd8-73f93d8a72ad",
+              "name": "Alerts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"title\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"Danger\",\n      \"lastIndexedDate\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"title\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"Caution\",\n      \"lastIndexedDate\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "502191af-b227-45c0-bc77-2ddba0bf2d22",
+      "name": "Campgrounds",
+      "description": {
+        "content": "Campground listings",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23620df5-2733-43ef-86fb-ec03b8c52876",
+          "name": "List campgrounds",
+          "request": {
+            "name": "List campgrounds",
+            "description": {},
+            "url": {
+              "path": [
+                "campgrounds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text search"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f9b4139-1899-4219-9f2c-2aebb711cb12",
+              "name": "Campgrounds",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "campgrounds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"name\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"reservationInfo\": \"string\",\n      \"regulationsurl\": \"string\",\n      \"campsites\": {},\n      \"amenities\": {}\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"name\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"reservationInfo\": \"string\",\n      \"regulationsurl\": \"string\",\n      \"campsites\": {},\n      \"amenities\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "54e30737-f7eb-4e28-869f-a8ed98c86dde",
+      "name": "VisitorCenters",
+      "description": {
+        "content": "Visitor centers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1a56dadf-77e5-48e5-91af-d0af600f873a",
+          "name": "List visitor centers",
+          "request": {
+            "name": "List visitor centers",
+            "description": {},
+            "url": {
+              "path": [
+                "visitorcenters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b73957c5-26a1-4c47-a271-600adf270b1d",
+              "name": "Visitor centers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "visitorcenters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"key_0\": 8801,\n      \"key_1\": 1842.8231431255604\n    },\n    {\n      \"key_0\": 2956,\n      \"key_1\": 7828.607762731126\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "78df6d00-c2b9-464d-89fe-62676267c062",
+      "name": "Events",
+      "description": {
+        "content": "Park events",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "03bf69af-f4bc-4c7e-82e0-bf5a944b85ff",
+          "name": "List park events",
+          "request": {
+            "name": "List park events",
+            "description": {},
+            "url": {
+              "path": [
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateStart",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateEnd",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0875d76b-6fc9-4487-a4d6-ff6575ea0213",
+              "name": "Events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"key_0\": 8801,\n      \"key_1\": 1842.8231431255604\n    },\n    {\n      \"key_0\": 2956,\n      \"key_1\": 7828.607762731126\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e95e6c09-3285-4fe5-9786-599ed53a61ef",
+      "name": "Articles",
+      "description": {
+        "content": "News articles and releases",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1dde5dc7-2e54-4c85-aa05-1e4fc5095b56",
+          "name": "List articles",
+          "request": {
+            "name": "List articles",
+            "description": {},
+            "url": {
+              "path": [
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text search"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c07474e7-8604-4449-b629-7afc4ec62dbd",
+              "name": "Articles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"key_0\": 8801,\n      \"key_1\": 1842.8231431255604\n    },\n    {\n      \"key_0\": 2956,\n      \"key_1\": 7828.607762731126\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "892dcfa3-ea9d-48ea-b1e9-d27674a52472",
+    "name": "National Park Service (NPS) Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

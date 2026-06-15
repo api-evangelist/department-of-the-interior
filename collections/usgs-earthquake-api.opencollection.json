@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USGS Earthquake Hazards Program API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query earthquake events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starttime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endtime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minlatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxlatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minlongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxlongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minmagnitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxmagnitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query earthquake events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Counts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Count events matching the query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://earthquake.usgs.gov/fdsnws/event/1/count",
+            "params": [
+              {
+                "name": "starttime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endtime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minmagnitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Count events matching the query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

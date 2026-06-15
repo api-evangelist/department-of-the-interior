@@ -1,0 +1,368 @@
+{
+  "item": [
+    {
+      "id": "cc446c87-b5b1-49c9-831e-a41e185cece6",
+      "name": "Sites",
+      "description": {
+        "content": "Water-monitoring sites",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca1d8536-143d-4525-8216-2a1b0a5f185d",
+          "name": "Look up monitoring sites",
+          "request": {
+            "name": "Look up monitoring sites",
+            "description": {},
+            "url": {
+              "path": [
+                "site",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "huc",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bBox",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countyCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36d98390-4a66-4645-9c56-411cf9b72d71",
+              "name": "Site response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "site",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "stateCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "huc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bBox",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countyCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "siteType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7952fb58-19bd-4815-b32e-91225022463f",
+      "name": "InstantaneousValues",
+      "description": {
+        "content": "Real-time instantaneous values",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "79ebfbf9-4a8a-430a-bf59-fc06d8e71042",
+          "name": "Real-time instantaneous values",
+          "request": {
+            "name": "Real-time instantaneous values",
+            "description": {},
+            "url": {
+              "path": [
+                "iv",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "sites",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87a753ff-348a-4343-9d35-1daf20f72f17",
+              "name": "Instantaneous values response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "iv",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "sites",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "P7D"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "15c901f6-7ef4-4084-9829-0372fb92a8a1",
+      "name": "DailyValues",
+      "description": {
+        "content": "Daily statistical values",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "de594579-b3cf-47c5-83c4-34c80a0ff983",
+          "name": "Daily statistical values",
+          "request": {
+            "name": "Daily statistical values",
+            "description": {},
+            "url": {
+              "path": [
+                "dv",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "sites",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDT",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDT",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67fbb806-af8a-4c78-a7c8-96e6f121280c",
+              "name": "Daily values response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dv",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "sites",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDT",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDT",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://waterservices.usgs.gov/nwis",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "667b9b6f-e748-4375-86dd-e8a770311c74",
+    "name": "USGS Water Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Geological Survey Water Services API provides real-time and historical surface-water, groundwater, and water-quality data for sites across the United States. Endpoints follow the WaterML / IV (instantaneous values), DV (daily values), and Site Service patterns.\n\nContact Support:\n Name: USGS Water Mission Area",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "item": [
+    {
+      "id": "8badaadd-c521-4bbf-be2c-2ffe613baffd",
+      "name": "Events",
+      "description": {
+        "content": "Earthquake event queries",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "772efaad-791b-4d50-a25f-74631fdf9c1e",
+          "name": "Query earthquake events",
+          "request": {
+            "name": "Query earthquake events",
+            "description": {},
+            "url": {
+              "path": [
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "geojson"
+                },
+                {
+                  "disabled": false,
+                  "key": "starttime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endtime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minlatitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxlatitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minlongitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxlongitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minmagnitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxmagnitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fbf9383-d441-406b-9632-1b94d9233451",
+              "name": "Earthquake FeatureCollection",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "geojson"
+                    },
+                    {
+                      "key": "starttime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endtime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minlatitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxlatitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "minlongitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxlongitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "minmagnitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxmagnitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"metadata\": {\n    \"generated\": 6856,\n    \"url\": \"string\",\n    \"title\": \"string\",\n    \"api\": \"string\",\n    \"count\": 8351,\n    \"status\": 3924\n  },\n  \"features\": [\n    {\n      \"type\": \"string\",\n      \"id\": \"string\",\n      \"properties\": {\n        \"mag\": 723.7549812891386,\n        \"place\": \"string\",\n        \"time\": 2753,\n        \"updated\": 8053,\n        \"tz\": 6899,\n        \"url\": \"string\",\n        \"detail\": \"string\",\n        \"felt\": 6526,\n        \"cdi\": 1323.6520277217578,\n        \"mmi\": 1042.6371980790962,\n        \"alert\": \"string\",\n        \"status\": \"string\",\n        \"tsunami\": 508,\n        \"sig\": 366,\n        \"net\": \"string\",\n        \"code\": \"string\",\n        \"ids\": \"string\",\n        \"sources\": \"string\",\n        \"types\": \"string\",\n        \"nst\": 176,\n        \"dmin\": 1408.1201921776676,\n        \"rms\": 9879.341183664661,\n        \"gap\": 2349.2544259332817,\n        \"magType\": \"string\",\n        \"type\": \"string\",\n        \"title\": \"string\"\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          2681.041450578586,\n          3943.114277737776,\n          7200.235409072988\n        ]\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"id\": \"string\",\n      \"properties\": {\n        \"mag\": 4412.476951893631,\n        \"place\": \"string\",\n        \"time\": 3392,\n        \"updated\": 5174,\n        \"tz\": 8126,\n        \"url\": \"string\",\n        \"detail\": \"string\",\n        \"felt\": 5303,\n        \"cdi\": 4206.668612299464,\n        \"mmi\": 7153.829727603309,\n        \"alert\": \"string\",\n        \"status\": \"string\",\n        \"tsunami\": 8442,\n        \"sig\": 4191,\n        \"net\": \"string\",\n        \"code\": \"string\",\n        \"ids\": \"string\",\n        \"sources\": \"string\",\n        \"types\": \"string\",\n        \"nst\": 3511,\n        \"dmin\": 5122.954945039049,\n        \"rms\": 5279.058301539253,\n        \"gap\": 295.603107999356,\n        \"magType\": \"string\",\n        \"type\": \"string\",\n        \"title\": \"string\"\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          433.2560654628603,\n          52.431944206312586,\n          5480.074170965177\n        ]\n      }\n    }\n  ],\n  \"bbox\": [\n    4635.636994688715,\n    7742.88766997855\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ae0f24ba-f2d4-424c-85c5-82de6fa8f385",
+      "name": "Counts",
+      "description": {
+        "content": "Event count queries",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0de9d0f-dbc8-4065-a703-a12cf1db2b70",
+          "name": "Count events matching the query",
+          "request": {
+            "name": "Count events matching the query",
+            "description": {},
+            "url": {
+              "path": [
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "starttime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endtime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minmagnitude",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eec111d1-441c-4c89-bb6c-bb26ca41a462",
+              "name": "Count",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "starttime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endtime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minmagnitude",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9818,\n  \"maxAllowed\": 8134\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://earthquake.usgs.gov/fdsnws/event/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3e2c226f-fe90-4706-8740-f0c2ba510853",
+    "name": "USGS Earthquake Hazards Program API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Geological Survey's Earthquake Hazards Program publishes a public earthquake-catalog API returning GeoJSON FeatureCollections for queries by time, magnitude, location, depth, intensity, and event type.\n\nContact Support:\n Name: USGS",
+      "type": "text/plain"
+    }
+  }
+}

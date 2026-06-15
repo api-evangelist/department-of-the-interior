@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USGS Water Services API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up monitoring sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waterservices.usgs.gov/nwis/site/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stateCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "huc",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bBox",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "countyCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "siteType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up monitoring sites"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "InstantaneousValues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Real-time instantaneous values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waterservices.usgs.gov/nwis/iv/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sites",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parameterCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Real-time instantaneous values"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "DailyValues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Daily statistical values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waterservices.usgs.gov/nwis/dv/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sites",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parameterCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDT",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDT",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Daily statistical values"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,249 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Park Service (NPS) Data API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List or search national parks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/parks",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List or search national parks"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Alerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List park alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/alerts",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search"
+              }
+            ]
+          },
+          "docs": "List park alerts"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Campgrounds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List campgrounds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/campgrounds",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search"
+              }
+            ]
+          },
+          "docs": "List campgrounds"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "VisitorCenters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List visitor centers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/visitorcenters",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              }
+            ]
+          },
+          "docs": "List visitor centers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List park events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/events",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List park events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/articles",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List articles"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
