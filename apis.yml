@@ -47,7 +47,7 @@ apis:
         url: openapi/nps-data-api-openapi.yml
       - type: JSONSchema
         url: json-schema/nps-park-schema.json
-      - type: Example
+      - type: Examples
         url: examples/park-example.json
       - type: Authentication
         url: https://www.nps.gov/subjects/developer/get-started.htm
@@ -69,7 +69,7 @@ apis:
         url: openapi/usgs-earthquake-api-openapi.yml
       - type: JSONSchema
         url: json-schema/earthquake-feature-schema.json
-      - type: Example
+      - type: Examples
         url: examples/earthquake-example.json
   - aid: department-of-the-interior:usgs-water-services-api
     name: USGS Water Services API
