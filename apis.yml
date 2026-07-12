@@ -19,6 +19,10 @@ tags:
   - Natural Resources
   - Geospatial
 common:
+  - type: DomainSecurity
+    url: security/department-of-the-interior-domain-security.yml
+  - type: Authentication
+    url: authentication/department-of-the-interior-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/doi-open-data
   - type: LinkedIn
