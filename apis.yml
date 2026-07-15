@@ -19,6 +19,8 @@ tags:
   - Natural Resources
   - Geospatial
 common:
+  - type: AgenticAccess
+    url: agentic-access/department-of-the-interior-agentic-access.yml
   - type: DomainSecurity
     url: security/department-of-the-interior-domain-security.yml
   - type: Authentication
