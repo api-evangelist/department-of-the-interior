@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts Counts API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Counts
+  description: Event count queries
+paths:
+  /count:
+    get:
+      tags:
+      - Counts
+      summary: Count events matching the query
+      operationId: countEvents
+      parameters:
+      - name: starttime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: endtime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: minmagnitude
+        in: query
+        schema:
+          type: number
+      responses:
+        '200':
+          description: Count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  maxAllowed:
+                    type: integer
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm

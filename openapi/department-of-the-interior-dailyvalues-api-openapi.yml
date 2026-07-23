@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts DailyValues API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: DailyValues
+  description: Daily statistical values
+paths:
+  /dv/:
+    get:
+      tags:
+      - DailyValues
+      summary: Daily statistical values
+      operationId: getDailyValues
+      parameters:
+      - $ref: '#/components/parameters/format'
+      - name: sites
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: parameterCd
+        in: query
+        schema:
+          type: string
+      - name: startDT
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: endDT
+        in: query
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Daily values response
+components:
+  parameters:
+    format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - rdb
+        - waterml
+        - xml
+        default: json
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm

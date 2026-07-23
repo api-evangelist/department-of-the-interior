@@ -1,0 +1,285 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts Events API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Events
+  description: Park events
+paths:
+  /events:
+    get:
+      tags:
+      - Events
+      summary: List park events
+      operationId: listEvents
+      parameters:
+      - $ref: '#/components/parameters/parkCode'
+      - $ref: '#/components/parameters/stateCode'
+      - name: dateStart
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: dateEnd
+        in: query
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Events
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /query:
+    get:
+      tags:
+      - Events
+      summary: Query earthquake events
+      operationId: queryEvents
+      parameters:
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - geojson
+          - csv
+          - kml
+          - quakeml
+          - text
+          - xml
+          default: geojson
+      - name: starttime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: endtime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: minlatitude
+        in: query
+        schema:
+          type: number
+          minimum: -90
+          maximum: 90
+      - name: maxlatitude
+        in: query
+        schema:
+          type: number
+          minimum: -90
+          maximum: 90
+      - name: minlongitude
+        in: query
+        schema:
+          type: number
+          minimum: -360
+          maximum: 360
+      - name: maxlongitude
+        in: query
+        schema:
+          type: number
+          minimum: -360
+          maximum: 360
+      - name: minmagnitude
+        in: query
+        schema:
+          type: number
+      - name: maxmagnitude
+        in: query
+        schema:
+          type: number
+      - name: orderby
+        in: query
+        schema:
+          type: string
+          enum:
+          - time
+          - time-asc
+          - magnitude
+          - magnitude-asc
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          maximum: 20000
+      responses:
+        '200':
+          description: Earthquake FeatureCollection
+          content:
+            application/geo+json:
+              schema:
+                $ref: '#/components/schemas/EarthquakeFeatureCollection'
+components:
+  parameters:
+    parkCode:
+      name: parkCode
+      in: query
+      schema:
+        type: string
+      description: Comma-separated four-letter park codes (e.g. yose,grca)
+    stateCode:
+      name: stateCode
+      in: query
+      schema:
+        type: string
+        pattern: ^[A-Z]{2}(,[A-Z]{2})*$
+  schemas:
+    EarthquakeFeatureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          const: FeatureCollection
+        metadata:
+          type: object
+          properties:
+            generated:
+              type: integer
+            url:
+              type: string
+            title:
+              type: string
+            api:
+              type: string
+            count:
+              type: integer
+            status:
+              type: integer
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/EarthquakeFeature'
+        bbox:
+          type: array
+          items:
+            type: number
+    EarthquakeFeature:
+      type: object
+      properties:
+        type:
+          type: string
+          const: Feature
+        id:
+          type: string
+        properties:
+          type: object
+          properties:
+            mag:
+              type: number
+            place:
+              type: string
+            time:
+              type: integer
+            updated:
+              type: integer
+            tz:
+              type:
+              - integer
+              - 'null'
+            url:
+              type: string
+            detail:
+              type: string
+            felt:
+              type:
+              - integer
+              - 'null'
+            cdi:
+              type:
+              - number
+              - 'null'
+            mmi:
+              type:
+              - number
+              - 'null'
+            alert:
+              type:
+              - string
+              - 'null'
+            status:
+              type: string
+            tsunami:
+              type: integer
+            sig:
+              type: integer
+            net:
+              type: string
+            code:
+              type: string
+            ids:
+              type: string
+            sources:
+              type: string
+            types:
+              type: string
+            nst:
+              type:
+              - integer
+              - 'null'
+            dmin:
+              type:
+              - number
+              - 'null'
+            rms:
+              type: number
+            gap:
+              type:
+              - number
+              - 'null'
+            magType:
+              type: string
+            type:
+              type: string
+            title:
+              type: string
+        geometry:
+          type: object
+          properties:
+            type:
+              type: string
+              const: Point
+            coordinates:
+              type: array
+              items:
+                type: number
+              minItems: 3
+              maxItems: 3
+    GenericResponse:
+      type: object
+      properties:
+        total:
+          type: string
+        limit:
+          type: string
+        start:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm

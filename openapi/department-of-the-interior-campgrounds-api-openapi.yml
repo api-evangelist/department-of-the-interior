@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts Campgrounds API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Campgrounds
+  description: Campground listings
+paths:
+  /campgrounds:
+    get:
+      tags:
+      - Campgrounds
+      summary: List campgrounds
+      operationId: listCampgrounds
+      parameters:
+      - $ref: '#/components/parameters/parkCode'
+      - $ref: '#/components/parameters/stateCode'
+      - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Campgrounds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CampgroundResponse'
+components:
+  parameters:
+    q:
+      name: q
+      in: query
+      schema:
+        type: string
+      description: Free-text search
+    parkCode:
+      name: parkCode
+      in: query
+      schema:
+        type: string
+      description: Comma-separated four-letter park codes (e.g. yose,grca)
+    stateCode:
+      name: stateCode
+      in: query
+      schema:
+        type: string
+        pattern: ^[A-Z]{2}(,[A-Z]{2})*$
+  schemas:
+    CampgroundResponse:
+      type: object
+      properties:
+        total:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              url:
+                type: string
+              name:
+                type: string
+              parkCode:
+                type: string
+              description:
+                type: string
+              latitude:
+                type: string
+              longitude:
+                type: string
+              reservationInfo:
+                type: string
+              regulationsurl:
+                type: string
+              fees:
+                type: array
+                items:
+                  type: object
+              campsites:
+                type: object
+              amenities:
+                type: object
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm

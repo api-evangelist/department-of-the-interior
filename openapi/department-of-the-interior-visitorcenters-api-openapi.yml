@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts VisitorCenters API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: VisitorCenters
+  description: Visitor centers
+paths:
+  /visitorcenters:
+    get:
+      tags:
+      - VisitorCenters
+      summary: List visitor centers
+      operationId: listVisitorCenters
+      parameters:
+      - $ref: '#/components/parameters/parkCode'
+      responses:
+        '200':
+          description: Visitor centers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+components:
+  parameters:
+    parkCode:
+      name: parkCode
+      in: query
+      schema:
+        type: string
+      description: Comma-separated four-letter park codes (e.g. yose,grca)
+  schemas:
+    GenericResponse:
+      type: object
+      properties:
+        total:
+          type: string
+        limit:
+          type: string
+        start:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm

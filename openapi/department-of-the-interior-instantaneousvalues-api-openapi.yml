@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: National Park Service (NPS) Data Alerts InstantaneousValues API
+  description: The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.
+  version: '1'
+  contact:
+    name: NPS Developer Resources
+    url: https://www.nps.gov/subjects/developer/
+  license:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/mark/1.0/
+servers:
+- url: https://developer.nps.gov/api/v1
+  description: Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: InstantaneousValues
+  description: Real-time instantaneous values
+paths:
+  /iv/:
+    get:
+      tags:
+      - InstantaneousValues
+      summary: Real-time instantaneous values
+      operationId: getInstantaneousValues
+      parameters:
+      - $ref: '#/components/parameters/format'
+      - name: sites
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: parameterCd
+        in: query
+        schema:
+          type: string
+      - name: period
+        in: query
+        schema:
+          type: string
+          example: P7D
+      responses:
+        '200':
+          description: Instantaneous values response
+components:
+  parameters:
+    format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - rdb
+        - waterml
+        - xml
+        default: json
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+externalDocs:
+  description: NPS API documentation
+  url: https://www.nps.gov/subjects/developer/api-documentation.htm
