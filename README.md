@@ -108,11 +108,6 @@ Department-wide open-data catalog at data.doi.gov, including datasets from all I
 - [Postman Collection](collections/usgs-water-services-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/usgs-water-services-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### BLM Public Lands Data
-
-Bureau of Land Management public-land data, including the Land Records System, mining claims, and recreation areas.
-
-- **Human URL:** [https://www.blm.gov/about/data](https://www.blm.gov/about/data)
 
 #### Tags
 
