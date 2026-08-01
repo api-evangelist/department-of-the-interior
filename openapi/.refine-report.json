@@ -1,0 +1,32 @@
+{
+  "provider": "department-of-the-interior",
+  "sources": [
+    "department-of-the-interior-alerts-api-openapi.yml",
+    "department-of-the-interior-articles-api-openapi.yml",
+    "department-of-the-interior-campgrounds-api-openapi.yml",
+    "department-of-the-interior-counts-api-openapi.yml",
+    "department-of-the-interior-dailyvalues-api-openapi.yml",
+    "department-of-the-interior-events-api-openapi.yml",
+    "department-of-the-interior-instantaneousvalues-api-openapi.yml",
+    "department-of-the-interior-parks-api-openapi.yml",
+    "department-of-the-interior-sites-api-openapi.yml",
+    "department-of-the-interior-visitorcenters-api-openapi.yml"
+  ],
+  "outputs": [
+    "department-of-the-interior-alerts-api-openapi.yml",
+    "department-of-the-interior-articles-api-openapi.yml",
+    "department-of-the-interior-campgrounds-api-openapi.yml",
+    "department-of-the-interior-counts-api-openapi.yml",
+    "department-of-the-interior-dailyvalues-api-openapi.yml",
+    "department-of-the-interior-events-api-openapi.yml",
+    "department-of-the-interior-instantaneousvalues-api-openapi.yml",
+    "department-of-the-interior-parks-api-openapi.yml",
+    "department-of-the-interior-sites-api-openapi.yml",
+    "department-of-the-interior-visitorcenters-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
