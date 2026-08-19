@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Park Service (NPS) Data Alerts InstantaneousValues API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "InstantaneousValues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Real-time instantaneous values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/iv/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sites",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parameterCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Real-time instantaneous values"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

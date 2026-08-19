@@ -1,0 +1,149 @@
+{
+  "item": [
+    {
+      "id": "6cedec1f-714d-4339-a4ef-4001cfd69bfa",
+      "name": "Counts",
+      "description": {
+        "content": "Event count queries",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc55a59d-a9c3-4444-9b0c-155742ca0061",
+          "name": "Count events matching the query",
+          "request": {
+            "name": "Count events matching the query",
+            "description": {},
+            "url": {
+              "path": [
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "starttime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endtime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minmagnitude",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4dfc64fe-0051-4043-aece-db32105bfde9",
+              "name": "Count",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "starttime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endtime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minmagnitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 3013,\n  \"maxAllowed\": 8940\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7a65158d-fc93-48e0-9d7f-3b40de121339",
+    "name": "National Park Service (NPS) Data Alerts Counts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

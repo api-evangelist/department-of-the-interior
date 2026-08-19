@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Park Service (NPS) Data Alerts Counts API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Counts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Count events matching the query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/count",
+            "params": [
+              {
+                "name": "starttime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endtime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minmagnitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Count events matching the query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

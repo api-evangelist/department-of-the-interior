@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "5ca10b08-fc70-4c9e-bc5c-cbf7faf17b53",
+      "name": "Parks",
+      "description": {
+        "content": "National parks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c933f01-21a9-4032-9d94-0dfa4ab08022",
+          "name": "List or search national parks",
+          "request": {
+            "name": "List or search national parks",
+            "description": {},
+            "url": {
+              "path": [
+                "parks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text search"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e69001a-5d93-467c-b0c7-78035640ff72",
+              "name": "Parks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"fullName\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"latLong\": \"string\",\n      \"states\": \"string\",\n      \"designation\": \"string\",\n      \"directionsInfo\": \"string\",\n      \"directionsUrl\": \"string\",\n      \"weatherInfo\": \"string\",\n      \"contacts\": {},\n      \"activities\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"fullName\": \"string\",\n      \"parkCode\": \"string\",\n      \"description\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"latLong\": \"string\",\n      \"states\": \"string\",\n      \"designation\": \"string\",\n      \"directionsInfo\": \"string\",\n      \"directionsUrl\": \"string\",\n      \"weatherInfo\": \"string\",\n      \"contacts\": {},\n      \"activities\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a59eaf8d-1c79-4a14-8e43-8c10af47e8b0",
+    "name": "National Park Service (NPS) Data Alerts Parks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Park Service (NPS) Data Alerts Sites API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up monitoring sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/site/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stateCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "huc",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bBox",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "countyCd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "siteType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up monitoring sites"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

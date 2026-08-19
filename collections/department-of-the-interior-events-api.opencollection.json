@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Park Service (NPS) Data Alerts Events API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List park events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/events",
+            "params": [
+              {
+                "name": "parkCode",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List park events"
+        },
+        {
+          "info": {
+            "name": "Query earthquake events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.nps.gov/api/v1/query",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "starttime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endtime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minlatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxlatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minlongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxlongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minmagnitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxmagnitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderby",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query earthquake events"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

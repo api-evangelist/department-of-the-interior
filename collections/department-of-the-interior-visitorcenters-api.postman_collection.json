@@ -1,0 +1,132 @@
+{
+  "item": [
+    {
+      "id": "5a0f1797-e937-4dff-a81c-03fd89823eba",
+      "name": "VisitorCenters",
+      "description": {
+        "content": "Visitor centers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5feeab0f-7c9b-40d3-ba00-fced20f930bf",
+          "name": "List visitor centers",
+          "request": {
+            "name": "List visitor centers",
+            "description": {},
+            "url": {
+              "path": [
+                "visitorcenters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "219cde13-9b31-4564-bade-d34b6b8cefa8",
+              "name": "Visitor centers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "visitorcenters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 5433\n    },\n    {\n      \"key_0\": true,\n      \"key_1\": 3385.086307878472\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d36d32d-e741-4aef-81b4-88bf62a6d0c6",
+    "name": "National Park Service (NPS) Data Alerts VisitorCenters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "item": [
+    {
+      "id": "30ae8345-1f91-4477-b530-1479a36dc3fa",
+      "name": "Events",
+      "description": {
+        "content": "Park events",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a0bb027-ac07-498a-9a46-05559efc1938",
+          "name": "List park events",
+          "request": {
+            "name": "List park events",
+            "description": {},
+            "url": {
+              "path": [
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parkCode",
+                  "value": "<string>",
+                  "description": "Comma-separated four-letter park codes (e.g. yose,grca)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateStart",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateEnd",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "996cc7ac-3fd9-42e7-958c-8e4b62e60985",
+              "name": "Events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parkCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": \"string\",\n  \"limit\": \"string\",\n  \"start\": \"string\",\n  \"data\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 5696.567113745978\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e542afd-7128-43ce-9a7e-bd9e9af3261b",
+          "name": "Query earthquake events",
+          "request": {
+            "name": "Query earthquake events",
+            "description": {},
+            "url": {
+              "path": [
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "geojson"
+                },
+                {
+                  "disabled": false,
+                  "key": "starttime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endtime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minlatitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxlatitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minlongitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxlongitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minmagnitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxmagnitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d417dd0d-2d66-4f1c-8ecf-e4971414ed2d",
+              "name": "Earthquake FeatureCollection",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "geojson"
+                    },
+                    {
+                      "key": "starttime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endtime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minlatitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxlatitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "minlongitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxlongitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "minmagnitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "maxmagnitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"metadata\": {\n    \"generated\": 857,\n    \"url\": \"string\",\n    \"title\": \"string\",\n    \"api\": \"string\",\n    \"count\": 6910,\n    \"status\": 5789\n  },\n  \"features\": [\n    {\n      \"type\": \"string\",\n      \"id\": \"string\",\n      \"properties\": {\n        \"mag\": 7943.531353760036,\n        \"place\": \"string\",\n        \"time\": 5516,\n        \"updated\": 2627,\n        \"tz\": 35,\n        \"url\": \"string\",\n        \"detail\": \"string\",\n        \"felt\": 4447,\n        \"cdi\": 3365.3638188723057,\n        \"mmi\": 5937.256996811805,\n        \"alert\": \"string\",\n        \"status\": \"string\",\n        \"tsunami\": 7439,\n        \"sig\": 8409,\n        \"net\": \"string\",\n        \"code\": \"string\",\n        \"ids\": \"string\",\n        \"sources\": \"string\",\n        \"types\": \"string\",\n        \"nst\": 2161,\n        \"dmin\": 6673.446688842406,\n        \"rms\": 8709.916512321708,\n        \"gap\": 1.5147394658110436,\n        \"magType\": \"string\",\n        \"type\": \"string\",\n        \"title\": \"string\"\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          8339.964689174147,\n          6355.871759094985,\n          5997.766489773021\n        ]\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"id\": \"string\",\n      \"properties\": {\n        \"mag\": 8446.241501787701,\n        \"place\": \"string\",\n        \"time\": 1535,\n        \"updated\": 71,\n        \"tz\": 6298,\n        \"url\": \"string\",\n        \"detail\": \"string\",\n        \"felt\": 2587,\n        \"cdi\": 2589.884224236153,\n        \"mmi\": 3488.5116517800698,\n        \"alert\": \"string\",\n        \"status\": \"string\",\n        \"tsunami\": 2113,\n        \"sig\": 4276,\n        \"net\": \"string\",\n        \"code\": \"string\",\n        \"ids\": \"string\",\n        \"sources\": \"string\",\n        \"types\": \"string\",\n        \"nst\": 7921,\n        \"dmin\": 581.5343853727617,\n        \"rms\": 4999.427370169294,\n        \"gap\": 5285.135133197767,\n        \"magType\": \"string\",\n        \"type\": \"string\",\n        \"title\": \"string\"\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          4411.773600440208,\n          2893.6458922204656,\n          1882.4206381042675\n        ]\n      }\n    }\n  ],\n  \"bbox\": [\n    5202.506132730585,\n    4410.589595350062\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "97a240ce-e79f-4ca8-85d1-7c1b59213c95",
+    "name": "National Park Service (NPS) Data Alerts Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

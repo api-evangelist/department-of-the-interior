@@ -1,0 +1,158 @@
+{
+  "item": [
+    {
+      "id": "3479211a-b1bd-4acf-aa54-4ddef4fa11f4",
+      "name": "DailyValues",
+      "description": {
+        "content": "Daily statistical values",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a85490b2-afad-44e3-a9fb-b6840eee3017",
+          "name": "Daily statistical values",
+          "request": {
+            "name": "Daily statistical values",
+            "description": {},
+            "url": {
+              "path": [
+                "dv",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "sites",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDT",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDT",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ed06458-4c12-49f6-9612-782148c1721e",
+              "name": "Daily values response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dv",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "sites",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDT",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDT",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3aac352b-1677-404f-bd87-0e9687d0ea79",
+    "name": "National Park Service (NPS) Data Alerts DailyValues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

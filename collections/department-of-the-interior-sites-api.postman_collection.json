@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "2a24e890-8ae7-4651-a483-a7a73677288a",
+      "name": "Sites",
+      "description": {
+        "content": "Water-monitoring sites",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0fc8b92-35ad-41f3-8770-a6fcea77812d",
+          "name": "Look up monitoring sites",
+          "request": {
+            "name": "Look up monitoring sites",
+            "description": {},
+            "url": {
+              "path": [
+                "site",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "huc",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bBox",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countyCd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1edb921e-0ddd-4d1b-bb13-6514b5435b43",
+              "name": "Site response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "site",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "stateCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "huc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bBox",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countyCd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "siteType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.nps.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "106660d8-4ee1-4324-82bc-0880d92fa80a",
+    "name": "National Park Service (NPS) Data Alerts Sites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Park Service Data API provides programmatic access to information about U.S. national parks - park overviews, alerts, events, visitor centers, campgrounds, things to do, news releases, articles, people, places, and more. The API is REST-based and returns JSON.\n\nContact Support:\n Name: NPS Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}
