@@ -27,6 +27,11 @@ position: Consuming
 access: 3rd-Party
 specificationVersion: '0.23'
 tags:
+  - Federal-Government
+  - Public Lands
+  - Natural Resources
+  - Geospatial
+tags_raw:
   - Federal Government
   - Public Lands
   - Natural Resources
@@ -205,6 +210,8 @@ apis:
     humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
     baseURL: https://developer.nps.gov/api/v1
     tags:
+      - Daily Values
+    tags_raw:
       - DailyValues
     properties:
       - type: OpenAPI
@@ -231,6 +238,8 @@ apis:
     humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
     baseURL: https://developer.nps.gov/api/v1
     tags:
+      - Event
+    tags_raw:
       - Events
     properties:
       - type: OpenAPI
