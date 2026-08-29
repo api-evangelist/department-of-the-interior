@@ -1,32 +1,42 @@
 {
   "provider": "department-of-the-interior",
   "sources": [
-    "department-of-the-interior-alerts-api-openapi.yml",
-    "department-of-the-interior-articles-api-openapi.yml",
-    "department-of-the-interior-campgrounds-api-openapi.yml",
-    "department-of-the-interior-counts-api-openapi.yml",
-    "department-of-the-interior-dailyvalues-api-openapi.yml",
-    "department-of-the-interior-events-api-openapi.yml",
-    "department-of-the-interior-instantaneousvalues-api-openapi.yml",
-    "department-of-the-interior-parks-api-openapi.yml",
-    "department-of-the-interior-sites-api-openapi.yml",
-    "department-of-the-interior-visitorcenters-api-openapi.yml"
+    "_original/nps-data-api-openapi.yml",
+    "_original/usgs-earthquake-api-openapi.yml",
+    "_original/usgs-water-services-api-openapi.yml"
   ],
   "outputs": [
     "department-of-the-interior-alerts-api-openapi.yml",
     "department-of-the-interior-articles-api-openapi.yml",
     "department-of-the-interior-campgrounds-api-openapi.yml",
+    "department-of-the-interior-events-api-openapi.yml",
+    "department-of-the-interior-parks-api-openapi.yml",
+    "department-of-the-interior-visitorcenters-api-openapi.yml",
     "department-of-the-interior-counts-api-openapi.yml",
     "department-of-the-interior-dailyvalues-api-openapi.yml",
-    "department-of-the-interior-events-api-openapi.yml",
     "department-of-the-interior-instantaneousvalues-api-openapi.yml",
-    "department-of-the-interior-parks-api-openapi.yml",
-    "department-of-the-interior-sites-api-openapi.yml",
-    "department-of-the-interior-visitorcenters-api-openapi.yml"
+    "department-of-the-interior-sites-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "nps-data-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "usgs-earthquake-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "usgs-water-services-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tag 'Events' spans 2 source specs (nps-data-api-openapi.yml, usgs-earthquake-api-openapi.yml): per-path servers applied"
+  ],
+  "skipped": [
+    "department-of-the-interior-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-campgrounds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-counts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-dailyvalues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-instantaneousvalues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-parks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-sites-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "department-of-the-interior-visitorcenters-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
