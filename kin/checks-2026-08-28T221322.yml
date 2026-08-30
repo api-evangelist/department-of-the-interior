@@ -2,15 +2,15 @@
 kin_checks:
   slug: department-of-the-interior
   schema_version: 0.15.1
-  scored_at: '2026-08-27'
-  run_ts: 2026-08-27T140727
+  scored_at: '2026-08-28'
+  run_ts: 2026-08-28T221322
   note: Actionable checks only (missed + partial). earned/na are every other check
     in rubric/scoring-0.15.1.yml; counts below let you verify that.
   counts:
     total: 130
-    earned: 32
-    partial: 11
-    missed: 61
+    earned: 29
+    partial: 15
+    missed: 60
     na: 26
   checks:
   - id: tags_present
@@ -36,9 +36,6 @@ kin_checks:
     status: missed
     detail: 0 of 10 openapi documents pass
   - id: components_reuse
-    status: missed
-    detail: 0 of 10 openapi documents pass
-  - id: credentials_not_in_query
     status: missed
     detail: 0 of 10 openapi documents pass
   - id: webhooks_or_callbacks
@@ -142,9 +139,25 @@ kin_checks:
     status: missed
   - id: agentic_commerce
     status: missed
+  - id: info_complete
+    status: partial
+    earned: 3.6
+    detail: 9 of 10 openapi documents pass
   - id: examples_present
     status: partial
     earned: 1.0
+  - id: security_schemes_defined
+    status: partial
+    earned: 2.4
+    detail: 6 of 10 openapi documents pass
+  - id: security_applied
+    status: partial
+    earned: 1.8
+    detail: 6 of 10 openapi documents pass
+  - id: credentials_not_in_query
+    status: partial
+    earned: 1.2
+    detail: 4 of 10 openapi documents pass
   - id: rules_present
     status: partial
     earned: 2.5
