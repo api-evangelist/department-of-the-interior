@@ -221,7 +221,7 @@ apis:
     humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
     baseURL: https://developer.nps.gov/api/v1
     tags:
-      - DailyValues
+      - Daily Values
     tags_raw:
       - DailyValues
     properties:
