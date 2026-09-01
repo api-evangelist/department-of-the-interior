@@ -30,7 +30,7 @@ accessModel:
     - authentication
   generated: '2026-07-22'
   method: derived
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json-icons/apis-json.png
+image: ''
 created: '2024-12-25'
 modified: '2026-07-25'
 type: Index
