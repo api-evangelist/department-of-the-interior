@@ -49,6 +49,8 @@ tags_raw:
   - Natural Resources
   - Geospatial
 common:
+  - type: Website
+    url: https://www.doi.gov/
   - type: AgenticAccess
     url: agentic-access/department-of-the-interior-agentic-access.yml
   - type: DomainSecurity
