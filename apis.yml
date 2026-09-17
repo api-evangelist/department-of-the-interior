@@ -68,316 +68,316 @@ common:
   - url: https://data.doi.gov/
     type: Datasets
 apis:
-  - aid: department-of-the-interior:doi-open-data
-    name: DOI Open Data Catalog
-    description: >-
-      Department-wide open-data catalog at data.doi.gov, including datasets from all Interior bureaus.
-    humanURL: https://data.doi.gov/
-    tags:
-      - Open Data
-    properties:
-      - type: Documentation
-        url: https://data.doi.gov/
-  - aid: department-of-the-interior:usfws-environmental-conservation-api
-    name: USFWS Environmental Conservation Online System (ECOS) API
-    description: >-
-      U.S. Fish and Wildlife Service data on listed species under the Endangered Species Act and the National
-      Wildlife Refuge System.
-    humanURL: https://ecos.fws.gov/ecp/
-    tags:
-      - USFWS
-      - Wildlife
-      - Endangered Species
-    properties:
-      - type: Documentation
-        url: https://ecos.fws.gov/ecp/
-  - aid: department-of-the-interior:bor-water-data
-    name: Bureau of Reclamation Water Data
-    description: Reclamation reservoir, dam, and water-operations data for the western United States.
-    humanURL: https://www.usbr.gov/projects/index.php
-    tags:
-      - Reclamation
-      - Water
-      - Dams
-    properties:
-      - type: Documentation
-        url: https://www.usbr.gov/projects/index.php
-  - aid: department-of-the-interior:onrr-revenue-data
-    name: ONRR Natural Resources Revenue Data
-    description: >-
-      Office of Natural Resources Revenue datasets on royalty, rent, and bonus revenue from federal energy
-      and mineral production.
-    humanURL: https://revenuedata.doi.gov/
-    tags:
-      - ONRR
-      - Revenue
-    properties:
-      - type: Documentation
-        url: https://revenuedata.doi.gov/
-  - aid: department-of-the-interior:department-of-the-interior-alerts-api
-    name: Department of the Interior Alerts API
-    description: Park alerts and emergencies
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Alerts
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-alerts-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-articles-api
-    name: Department of the Interior Articles API
-    description: News articles and releases
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Articles
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-articles-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-campgrounds-api
-    name: Department of the Interior Campgrounds API
-    description: Campground listings
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Campgrounds
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-campgrounds-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-counts-api
-    name: Department of the Interior Counts API
-    description: Event count queries
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Counts
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-counts-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-dailyvalues-api
-    name: Department of the Interior DailyValues API
-    description: Daily statistical values
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Daily Values
-    tags_raw:
-      - DailyValues
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-dailyvalues-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-events-api
-    name: Department of the Interior Events API
-    description: Park events
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Event
-    tags_raw:
-      - Events
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-events-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-instantaneousvalues-api
-    name: Department of the Interior InstantaneousValues API
-    description: Real-time instantaneous values
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - InstantaneousValues
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-instantaneousvalues-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-parks-api
-    name: Department of the Interior Parks API
-    description: National parks
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Parks
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-parks-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-sites-api
-    name: Department of the Interior Sites API
-    description: Water-monitoring sites
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - Sites
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-sites-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
-  - aid: department-of-the-interior:department-of-the-interior-visitorcenters-api
-    name: Department of the Interior VisitorCenters API
-    description: Visitor centers
-    humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
-    baseURL: https://developer.nps.gov/api/v1
-    tags:
-      - VisitorCenters
-    properties:
-      - type: OpenAPI
-        url: openapi/department-of-the-interior-visitorcenters-api-openapi.yml
-      - type: Documentation
-        url: https://www.nps.gov/subjects/developer/api-documentation.htm
-      - type: JSONSchema
-        url: json-schema/nps-park-schema.json
-      - type: Examples
-        url: examples/park-example.json
-      - type: Authentication
-        url: https://www.nps.gov/subjects/developer/get-started.htm
-      - type: Documentation
-        url: https://earthquake.usgs.gov/fdsnws/event/1/
-      - type: JSONSchema
-        url: json-schema/earthquake-feature-schema.json
-      - type: Examples
-        url: examples/earthquake-example.json
-      - type: Documentation
-        url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:doi-open-data
+  name: DOI Open Data Catalog
+  description: >-
+    Department-wide open-data catalog at data.doi.gov, including datasets from all Interior bureaus.
+  humanURL: https://data.doi.gov/
+  tags:
+  - Open Data
+  properties:
+  - type: Documentation
+    url: https://data.doi.gov/
+- aid: department-of-the-interior:usfws-environmental-conservation-api
+  name: USFWS Environmental Conservation Online System (ECOS) API
+  description: >-
+    U.S. Fish and Wildlife Service data on listed species under the Endangered Species Act and the National
+    Wildlife Refuge System.
+  humanURL: https://ecos.fws.gov/ecp/
+  tags:
+  - USFWS
+  - Wildlife
+  - Endangered Species
+  properties:
+  - type: Documentation
+    url: https://ecos.fws.gov/ecp/
+- aid: department-of-the-interior:bor-water-data
+  name: Bureau of Reclamation Water Data
+  description: Reclamation reservoir, dam, and water-operations data for the western United States.
+  humanURL: https://www.usbr.gov/projects/index.php
+  tags:
+  - Reclamation
+  - Water
+  - Dams
+  properties:
+  - type: Documentation
+    url: https://www.usbr.gov/projects/index.php
+- aid: department-of-the-interior:onrr-revenue-data
+  name: ONRR Natural Resources Revenue Data
+  description: >-
+    Office of Natural Resources Revenue datasets on royalty, rent, and bonus revenue from federal energy
+    and mineral production.
+  humanURL: https://revenuedata.doi.gov/
+  tags:
+  - ONRR
+  - Revenue
+  properties:
+  - type: Documentation
+    url: https://revenuedata.doi.gov/
+- aid: department-of-the-interior:department-of-the-interior-alerts-api
+  name: Department of the Interior Alerts API
+  description: Park alerts and emergencies
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-articles-api
+  name: Department of the Interior Articles API
+  description: News articles and releases
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-articles-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-campgrounds-api
+  name: Department of the Interior Campgrounds API
+  description: Campground listings
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Campgrounds
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-campgrounds-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-counts-api
+  name: Department of the Interior Counts API
+  description: Event count queries
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Counts
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-counts-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-dailyvalues-api
+  name: Department of the Interior DailyValues API
+  description: Daily statistical values
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Daily Values
+  tags_raw:
+  - DailyValues
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-dailyvalues-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-events-api
+  name: Department of the Interior Events API
+  description: Park events
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Event
+  tags_raw:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-events-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-instantaneousvalues-api
+  name: Department of the Interior InstantaneousValues API
+  description: Real-time instantaneous values
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - InstantaneousValues
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-instantaneousvalues-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-parks-api
+  name: Department of the Interior Parks API
+  description: National parks
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Parks
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-parks-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-sites-api
+  name: Department of the Interior Sites API
+  description: Water-monitoring sites
+  humanURL: https://www.nps.gov/subjects/developer/api-documentation.htm
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-sites-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
+- aid: department-of-the-interior:department-of-the-interior-visitor-centers-api
+  name: Department of the Interior Visitor Centers API
+  description: Visitor centers
+  humanURL: https://data.doi.gov/
+  baseURL: https://developer.nps.gov/api/v1
+  tags:
+  - Visitor Centers
+  properties:
+  - type: OpenAPI
+    url: openapi/department-of-the-interior-visitor-centers-api-openapi.yml
+  - type: Documentation
+    url: https://www.nps.gov/subjects/developer/api-documentation.htm
+  - type: JSONSchema
+    url: json-schema/nps-park-schema.json
+  - type: Examples
+    url: examples/park-example.json
+  - type: Authentication
+    url: https://www.nps.gov/subjects/developer/get-started.htm
+  - type: Documentation
+    url: https://earthquake.usgs.gov/fdsnws/event/1/
+  - type: JSONSchema
+    url: json-schema/earthquake-feature-schema.json
+  - type: Examples
+    url: examples/earthquake-example.json
+  - type: Documentation
+    url: https://waterservices.usgs.gov/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
