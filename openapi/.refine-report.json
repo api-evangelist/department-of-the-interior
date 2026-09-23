@@ -17,7 +17,9 @@
     "department-of-the-interior-instantaneousvalues-api-openapi.yml",
     "department-of-the-interior-sites-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -25,7 +27,9 @@
     "nps-data-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "usgs-earthquake-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "usgs-water-services-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "tag 'Events' spans 2 source specs (nps-data-api-openapi.yml, usgs-earthquake-api-openapi.yml): per-path servers applied"
+    "tag 'Events' spans 2 source specs (nps-data-api-openapi.yml, usgs-earthquake-api-openapi.yml): per-path servers applied",
+    "superseded outputs removed: department-of-the-interior-visitor-centers-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 14 total)"
   ],
   "skipped": [
     "department-of-the-interior-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -37,6 +41,6 @@
     "department-of-the-interior-instantaneousvalues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "department-of-the-interior-parks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "department-of-the-interior-sites-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "department-of-the-interior-visitorcenters-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "department-of-the-interior-visitor-centers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

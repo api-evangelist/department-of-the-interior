@@ -1,4 +1,4 @@
-name: Department of the Interior API Rules
+x-name: Department of the Interior API Rules
 description: >-
   Rules and constraints governing access to Interior bureau APIs.
 rules:
